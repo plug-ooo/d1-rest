@@ -1,0 +1,27 @@
+/**
+ * For more details on how to configure Wrangler, refer to:
+ * https://developers.cloudflare.com/workers/wrangler/configuration/
+ */
+{
+	"$schema": "node_modules/wrangler/config-schema.json",
+	"name": "d1-rest",
+	"main": "src/index.ts",
+	"compatibility_date": "2025-03-03",
+    "d1_databases": [
+        {
+          "binding": "DB",
+          "database_name": "lexkynews-archive",
+          "database_id": "589cdbe7-1909-44d2-b73d-716b7c8a6ee8"
+        }
+    ],
+    "secrets_store_secrets": [
+        {
+            "store_id": "a280cd2742a04539881f1805b526ac90",
+            "binding": "SECRET",
+            "secret_name": "HF_TOKEN"
+        }
+    ],
+	"observability": {
+		"enabled": true
+	}
+}
